@@ -19,19 +19,15 @@ class ViewController: UIViewController {
 
     @IBAction func searchButtonPressed(_ sender: Any) {
         
-        networkManager.onCompletion = { [weak self] currentWeather in
-            guard let self = self else  { return }
-            self.updateInterface(weather: currentWeather)
+        self.presentSearchAlertController(withTitle: "Введите название города", message: nil, style: .alert) { city in
+            self.networkManager.fetchCurrentWeather(for: city)
         }
-        
-        self.networkManager.fetchCurrentWeather(for: "Ufa")
         
     }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
         
         networkManager.onCompletion = { [weak self] currentWeather in
             guard let self = self else  { return }
