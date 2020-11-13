@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
-        networkManager.fetchCurrentWeather(for: "Kaluga")
+        self.networkManager.fetchCurrentWeather(for: "Kaluga")
         
         
     }
