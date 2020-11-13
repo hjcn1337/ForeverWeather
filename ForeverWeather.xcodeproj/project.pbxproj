@@ -14,6 +14,8 @@
 		52E65F5D255E6786004490E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E65F5C255E6786004490E3 /* Assets.xcassets */; };
 		52E65F60255E6787004490E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52E65F5E255E6787004490E3 /* LaunchScreen.storyboard */; };
 		52E65F6D255E68E2004490E3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 52E65F6C255E68E2004490E3 /* .gitignore */; };
+		52E65F72255E735E004490E3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E65F71255E735E004490E3 /* NetworkManager.swift */; };
+		52E65F77255E73B2004490E3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E65F76255E73B2004490E3 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		52E65F5F255E6787004490E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52E65F61255E6787004490E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52E65F6C255E68E2004490E3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		52E65F71255E735E004490E3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		52E65F76255E73B2004490E3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 		52E65F52255E6784004490E3 /* ForeverWeather */ = {
 			isa = PBXGroup;
 			children = (
+				52E65F75255E739A004490E3 /* Constants */,
+				52E65F70255E7334004490E3 /* Network */,
 				52E65F53255E6784004490E3 /* AppDelegate.swift */,
 				52E65F55255E6784004490E3 /* SceneDelegate.swift */,
 				52E65F57255E6784004490E3 /* ViewController.swift */,
@@ -68,6 +74,22 @@
 				52E65F61255E6787004490E3 /* Info.plist */,
 			);
 			path = ForeverWeather;
+			sourceTree = "<group>";
+		};
+		52E65F70255E7334004490E3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				52E65F71255E735E004490E3 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		52E65F75255E739A004490E3 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				52E65F76255E73B2004490E3 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +163,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52E65F77255E73B2004490E3 /* Constants.swift in Sources */,
+				52E65F72255E735E004490E3 /* NetworkManager.swift in Sources */,
 				52E65F58255E6784004490E3 /* ViewController.swift in Sources */,
 				52E65F54255E6784004490E3 /* AppDelegate.swift in Sources */,
 				52E65F56255E6784004490E3 /* SceneDelegate.swift in Sources */,
