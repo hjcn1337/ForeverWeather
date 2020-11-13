@@ -15,6 +15,10 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
+        networkManager.onCompletion = { [weak self] currentWeather in
+            print(currentWeather.temperatureString)
+            print(currentWeather.city)
+        }
         self.networkManager.fetchCurrentWeather(for: "Kaluga")
         
         
