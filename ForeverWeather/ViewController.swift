@@ -9,21 +9,46 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var weatherIconImageView: UIImageView!
+    
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var feelsLikeTemperatureLabel: UILabel!
+    
     let networkManager = NetworkManager()
 
+    @IBAction func searchButtonPressed(_ sender: Any) {
+        
+        networkManager.onCompletion = { [weak self] currentWeather in
+            guard let self = self else  { return }
+            self.updateInterface(weather: currentWeather)
+        }
+        
+        self.networkManager.fetchCurrentWeather(for: "Ufa")
+        
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+        
         networkManager.onCompletion = { [weak self] currentWeather in
-            print(currentWeather.temperatureString)
-            print(currentWeather.city)
+            guard let self = self else  { return }
+            self.updateInterface(weather: currentWeather)
         }
         self.networkManager.fetchCurrentWeather(for: "Kaluga")
         
-        
     }
 
-
+    func updateInterface(weather: CurrentWeather) {
+        DispatchQueue.main.async {
+            self.cityLabel.text = weather.city
+            self.temperatureLabel.text = weather.temperatureString
+            self.feelsLikeTemperatureLabel.text = weather.feelsLikeTemperatureString
+            self.weatherIconImageView.image = UIImage(systemName: weather.systemIconNameString)
+        }
+        
+    }
 }
 
