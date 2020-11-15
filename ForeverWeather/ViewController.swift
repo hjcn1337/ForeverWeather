@@ -31,6 +31,9 @@ class ViewController: UIViewController {
     @IBAction func searchButtonPressed(_ sender: Any) {
         
         self.presentSearchAlertController(withTitle: "Введите название города", message: nil, style: .alert) { [unowned self] city in
+            DispatchQueue.main.async {
+                self.showLoadingAlert()
+            }
             self.networkManager.fetchCurrentWeather(forRequestType: .cityName(city: city))
         }
         
@@ -39,6 +42,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        
+        DispatchQueue.main.async {
+            self.showLoadingAlert()
+        }
         
         networkManager.onCompletion = { [weak self] currentWeather in
             guard let self = self else  { return }
@@ -58,6 +66,8 @@ class ViewController: UIViewController {
             self.temperatureLabel.text = weather.temperatureString
             self.feelsLikeTemperatureLabel.text = weather.feelsLikeTemperatureString
             self.weatherIconImageView.image = UIImage(systemName: weather.systemIconNameString)
+            
+            self.dismiss(animated: false, completion: nil)
         }
         
     }
@@ -67,6 +77,20 @@ class ViewController: UIViewController {
             let dvc = segue.destination as! MapViewController
             dvc.city = self.weather.city
         }
+    }
+    
+    func showLoadingAlert() {
+        
+        let alert = UIAlertController(title: nil, message: "Загрузка...", preferredStyle: .alert)
+
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.medium
+        loadingIndicator.startAnimating();
+
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+        
     }
 }
 
