@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52C6D40025613A6000BA0D99 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C6D3FF25613A6000BA0D99 /* MapViewController.swift */; };
+		52C6D40425613B0D00BA0D99 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C6D40325613B0D00BA0D99 /* MapKit.framework */; };
 		52E65F54255E6784004490E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E65F53255E6784004490E3 /* AppDelegate.swift */; };
 		52E65F56255E6784004490E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E65F55255E6784004490E3 /* SceneDelegate.swift */; };
 		52E65F58255E6784004490E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E65F57255E6784004490E3 /* ViewController.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52C6D3FF25613A6000BA0D99 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		52C6D40325613B0D00BA0D99 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		52E65F50255E6784004490E3 /* ForeverWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForeverWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E65F53255E6784004490E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52E65F55255E6784004490E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,18 +47,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C6D40425613B0D00BA0D99 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52C6D40225613B0D00BA0D99 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				52C6D40325613B0D00BA0D99 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		52E65F47255E6784004490E3 = {
 			isa = PBXGroup;
 			children = (
 				52E65F6C255E68E2004490E3 /* .gitignore */,
 				52E65F52255E6784004490E3 /* ForeverWeather */,
 				52E65F51255E6784004490E3 /* Products */,
+				52C6D40225613B0D00BA0D99 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +91,7 @@
 				52E65F55255E6784004490E3 /* SceneDelegate.swift */,
 				52E65F57255E6784004490E3 /* ViewController.swift */,
 				52E65F59255E6784004490E3 /* Main.storyboard */,
+				52C6D3FF25613A6000BA0D99 /* MapViewController.swift */,
 				52E65F5C255E6786004490E3 /* Assets.xcassets */,
 				52E65F5E255E6787004490E3 /* LaunchScreen.storyboard */,
 				52E65F61255E6787004490E3 /* Info.plist */,
@@ -192,6 +207,7 @@
 				52E65F72255E735E004490E3 /* NetworkManager.swift in Sources */,
 				52E65F7C255E75A9004490E3 /* CurrentWeatherData.swift in Sources */,
 				52E65F7F255E7952004490E3 /* CurrentWeather.swift in Sources */,
+				52C6D40025613A6000BA0D99 /* MapViewController.swift in Sources */,
 				52E65F58255E6784004490E3 /* ViewController.swift in Sources */,
 				52E65F83255EC78F004490E3 /* ViewController+alertController.swift in Sources */,
 				52E65F54255E6784004490E3 /* AppDelegate.swift in Sources */,

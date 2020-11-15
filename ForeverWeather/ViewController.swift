@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     
     let networkManager = NetworkManager()
     
+    var weather: CurrentWeather!
+    
     lazy var locationManager: CLLocationManager = {
         let lm = CLLocationManager()
         lm.delegate = self
@@ -41,6 +43,7 @@ class ViewController: UIViewController {
         networkManager.onCompletion = { [weak self] currentWeather in
             guard let self = self else  { return }
             self.updateInterface(weather: currentWeather)
+            self.weather = currentWeather
         }
         
         if CLLocationManager.locationServicesEnabled() {
@@ -58,7 +61,15 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mapSegue" {
+            let dvc = segue.destination as! MapViewController
+            dvc.city = self.weather.city
+        }
+    }
 }
+
 
 
 extension ViewController: CLLocationManagerDelegate {
