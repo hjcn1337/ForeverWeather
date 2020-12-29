@@ -25,7 +25,6 @@ class NetworkManager {
         case .coordinate(let latitude, let longitude):
             urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)&units=metric"
         }
-        //performRequest(withURLString: urlString)
         
         return Observable<CurrentWeatherData>.create { observer in
             let url = URL(string: urlString)
@@ -41,7 +40,6 @@ class NetworkManager {
                         observer.onError(error)
                     }
                 }
-                   
             }
             
             task.resume()
@@ -49,9 +47,6 @@ class NetworkManager {
             return Disposables.create {
                 task.cancel()
             }
-            
         }
-        
     }
-    
 }

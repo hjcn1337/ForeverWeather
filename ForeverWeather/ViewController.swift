@@ -13,26 +13,13 @@ import RxCocoa
 class ViewController: UIViewController {
     
     @IBOutlet weak var weatherIconImageView: UIImageView!
-    
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var feelsLikeTemperatureLabel: UILabel!
     
-    let networkManager = NetworkManager()
-    
-    var weather: CurrentWeather!
-    
     private var viewModel: CurrentWeatherViewModel!
     private let disposeBag = DisposeBag()
     
-    /*lazy var locationManager: CLLocationManager = {
-        let lm = CLLocationManager()
-        lm.delegate = self
-        lm.desiredAccuracy = kCLLocationAccuracyKilometer
-        lm.requestWhenInUseAuthorization()
-        return lm
-    }()*/
-
     @IBAction func searchButtonPressed(_ sender: Any) {
         
         self.presentSearchAlertController(withTitle: "Введите название города", message: nil, style: .alert) { [unowned self] city in
@@ -41,38 +28,22 @@ class ViewController: UIViewController {
             cityObservable
                 .bind(to: viewModel.searchText)
                 .disposed(by: disposeBag)
-            
-            /*DispatchQueue.main.async {
-                self.showLoadingAlert()
-            }*/
-            //self.networkManager.fetchCurrentWeather(forRequestType: .cityName(city: city))
         }
-        
     }
-    
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        viewModel = CurrentWeatherViewModel()
-        addBindsToViewModel(viewModel)
-        
-        
-        /*DispatchQueue.main.async {
+        DispatchQueue.main.async {
             self.showLoadingAlert()
-        }*/
+        }
         
-        /*networkManager.onCompletion = { [weak self] currentWeather in
-            guard let self = self else  { return }
-            self.updateInterface(weather: currentWeather)
-            self.weather = currentWeather
-        }*/
-        
-        /*if CLLocationManager.locationServicesEnabled() {
-            locationManager.requestLocation()
-        }*/
-        
+        viewModel = CurrentWeatherViewModel()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+            self.addBindsToViewModel(self.viewModel)
+            self.dismiss(animated: false, completion: nil)
+        }
     }
     
     private func addBindsToViewModel(_ viewModel: CurrentWeatherViewModel) {
@@ -88,24 +59,17 @@ class ViewController: UIViewController {
         viewModel.feelsLikeTemperature
             .bind(to: feelsLikeTemperatureLabel.rx.text)
             .disposed(by: disposeBag)
-    }
-
-    /*func updateInterface(weather: CurrentWeather) {
-        DispatchQueue.main.async {
-            self.cityLabel.text = weather.city
-            self.temperatureLabel.text = weather.temperatureString
-            self.feelsLikeTemperatureLabel.text = weather.feelsLikeTemperatureString
-            self.weatherIconImageView.image = UIImage(systemName: weather.systemIconNameString)
-            
-            self.dismiss(animated: false, completion: nil)
-        }
         
-    }*/
+        viewModel.weatherIcon
+            .bind(to: weatherIconImageView.rx.image)
+            .disposed(by: disposeBag)
+
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mapSegue" {
             let dvc = segue.destination as! MapViewController
-            dvc.city = self.weather.city
+            dvc.city = self.cityLabel.text
         }
     }
     
@@ -123,19 +87,3 @@ class ViewController: UIViewController {
         
     }
 }
-
-
-
-/*extension ViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-        let latitude = location.coordinate.latitude
-        let longitude = location.coordinate.longitude
-        
-        networkManager.fetchCurrentWeather(forRequestType: .coordinate(latitude: latitude, longitude: longitude))
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
-    }
-}*/

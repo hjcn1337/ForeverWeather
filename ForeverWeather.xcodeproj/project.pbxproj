@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,7 +20,6 @@
 		52E65F72255E735E004490E3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E65F71255E735E004490E3 /* NetworkManager.swift */; };
 		52E65F77255E73B2004490E3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E65F76255E73B2004490E3 /* Constants.swift */; };
 		52E65F7C255E75A9004490E3 /* CurrentWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E65F7B255E75A9004490E3 /* CurrentWeatherData.swift */; };
-		52E65F7F255E7952004490E3 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E65F7E255E7952004490E3 /* CurrentWeather.swift */; };
 		52E65F83255EC78F004490E3 /* ViewController+alertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E65F82255EC78F004490E3 /* ViewController+alertController.swift */; };
 		55F4DEE1B522B7ACE75FAEA2 /* Pods_ForeverWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBEA87373BF974D30EC1B64 /* Pods_ForeverWeather.framework */; };
 /* End PBXBuildFile section */
@@ -41,7 +40,6 @@
 		52E65F71255E735E004490E3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		52E65F76255E73B2004490E3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		52E65F7B255E75A9004490E3 /* CurrentWeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherData.swift; sourceTree = "<group>"; };
-		52E65F7E255E7952004490E3 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		52E65F82255EC78F004490E3 /* ViewController+alertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+alertController.swift"; sourceTree = "<group>"; };
 		81ABDBB11876B56C6E402D06 /* Pods-ForeverWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForeverWeather.debug.xcconfig"; path = "Target Support Files/Pods-ForeverWeather/Pods-ForeverWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		E1ABB210C404739B69E84DC6 /* Pods-ForeverWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForeverWeather.release.xcconfig"; path = "Target Support Files/Pods-ForeverWeather/Pods-ForeverWeather.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				52E65F7B255E75A9004490E3 /* CurrentWeatherData.swift */,
-				52E65F7E255E7952004490E3 /* CurrentWeather.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -156,7 +153,6 @@
 				81ABDBB11876B56C6E402D06 /* Pods-ForeverWeather.debug.xcconfig */,
 				E1ABB210C404739B69E84DC6 /* Pods-ForeverWeather.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -278,7 +274,6 @@
 				52E65F77255E73B2004490E3 /* Constants.swift in Sources */,
 				52E65F72255E735E004490E3 /* NetworkManager.swift in Sources */,
 				52E65F7C255E75A9004490E3 /* CurrentWeatherData.swift in Sources */,
-				52E65F7F255E7952004490E3 /* CurrentWeather.swift in Sources */,
 				52C6D40025613A6000BA0D99 /* MapViewController.swift in Sources */,
 				52E65F58255E6784004490E3 /* ViewController.swift in Sources */,
 				52E65F83255EC78F004490E3 /* ViewController+alertController.swift in Sources */,

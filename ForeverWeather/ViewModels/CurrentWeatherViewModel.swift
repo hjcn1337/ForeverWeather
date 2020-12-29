@@ -34,7 +34,7 @@ final class CurrentWeatherViewModel: NSObject {
     
     var feelsLikeTemperature: Observable<String> = Observable.empty()
     
-    var systemIconNameString: Observable<String> = Observable.empty()
+    var weatherIcon: Observable<UIImage> = Observable.empty()
     
     var searchText = BehaviorRelay<String>(value: "")
     
@@ -49,6 +49,7 @@ final class CurrentWeatherViewModel: NSObject {
             .flatMapLatest { [unowned self] searchString -> Observable<CurrentWeatherData> in
                 
                 guard !searchString.isEmpty else {
+                    //return Observable.empty()
                     return self.networkManager.fetchCurrentWeather(forRequestType: .coordinate(latitude: self.latitude, longitude: self.longitude))
                 }
                 
@@ -66,25 +67,25 @@ final class CurrentWeatherViewModel: NSObject {
             .map { String(format: "%.0f", $0.main.feelsLike) + " °C" }
         
         
-        systemIconNameString = weather
+        weatherIcon = weather
             .map {
                 switch $0.weather.first!.id {
                 case 200...232:
-                    return "cloud.bolt.rain.fill"
+                    return UIImage(systemName: "cloud.bolt.rain.fill")!
                 case 300...321:
-                    return "cloud.drizzle.fill"
+                    return UIImage(systemName: "cloud.drizzle.fill")!
                 case 500...531:
-                    return "cloud.rain.fill"
+                    return UIImage(systemName: "cloud.rain.fill")!
                 case 600...622:
-                    return "cloud.snow.fill"
+                    return UIImage(systemName: "cloud.snow.fill")!
                 case 701...781:
-                    return "smoke.fill"
+                    return UIImage(systemName: "smoke.fill")!
                 case 800:
-                    return "sun.min.fill"
+                    return UIImage(systemName: "sun.min.fill")!
                 case 801...804:
-                    return "cloud.fill"
+                    return UIImage(systemName: "cloud.fill")!
                 default:
-                    return "nosign"
+                    return UIImage(systemName: "nosign")!
                 }
             }
         
