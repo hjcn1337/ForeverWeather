@@ -38,7 +38,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpz-iL-w6S">
-                                <rect key="frame" x="369.5" y="253" width="24.5" height="22.5"/>
+                                <rect key="frame" x="341.5" y="253" width="24.5" height="22.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22.5" id="mJI-Oz-Pty"/>
                                     <constraint firstAttribute="width" constant="24.5" id="oW6-O6-bHY"/>
@@ -52,7 +52,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пожалуйста, подождите" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hR9-dc-HuT">
-                                <rect key="frame" x="20" y="253" width="267.5" height="29"/>
+                                <rect key="frame" x="20" y="253" width="287.5" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
@@ -64,7 +64,7 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmU-iz-mpt">
-                                <rect key="frame" x="363" y="302" width="36" height="23"/>
+                                <rect key="frame" x="335.5" y="302" width="36" height="23"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
                                     <imageReference key="image" image="map.fill" catalog="system" symbolScale="large"/>
@@ -79,19 +79,19 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bHo-be-nj5" secondAttribute="trailing" constant="126" id="APf-L7-046"/>
                             <constraint firstItem="hR9-dc-HuT" firstAttribute="top" secondItem="EYG-Un-0o9" secondAttribute="bottom" constant="37.5" id="E5H-W0-8hm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VmU-iz-mpt" secondAttribute="trailing" constant="15" id="JXA-dh-AV9"/>
-                            <constraint firstItem="dpz-iL-w6S" firstAttribute="leading" secondItem="hR9-dc-HuT" secondAttribute="trailing" constant="82" id="QIb-1F-75E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VmU-iz-mpt" secondAttribute="trailing" constant="42.333333333333314" id="JXA-dh-AV9"/>
+                            <constraint firstItem="dpz-iL-w6S" firstAttribute="leading" secondItem="hR9-dc-HuT" secondAttribute="trailing" constant="34" id="QIb-1F-75E"/>
                             <constraint firstItem="sap-HH-kSm" firstAttribute="top" secondItem="ES4-P8-bP1" secondAttribute="bottom" constant="40" id="Tq0-mb-FIQ"/>
                             <constraint firstItem="ES4-P8-bP1" firstAttribute="top" secondItem="hR9-dc-HuT" secondAttribute="bottom" constant="20" id="YFa-Yx-os5"/>
                             <constraint firstItem="hR9-dc-HuT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ZfF-xE-rVY"/>
-                            <constraint firstItem="VmU-iz-mpt" firstAttribute="leading" secondItem="ES4-P8-bP1" secondAttribute="trailing" constant="75" id="alF-vZ-0U1"/>
+                            <constraint firstItem="VmU-iz-mpt" firstAttribute="leading" secondItem="ES4-P8-bP1" secondAttribute="trailing" constant="47.666666666666686" id="alF-vZ-0U1"/>
                             <constraint firstItem="bHo-be-nj5" firstAttribute="top" secondItem="sap-HH-kSm" secondAttribute="bottom" constant="7" id="brK-FE-Dpr"/>
                             <constraint firstItem="ES4-P8-bP1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cpP-r0-dXm"/>
                             <constraint firstItem="dpz-iL-w6S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="209" id="edR-9j-ndH"/>
                             <constraint firstItem="EYG-Un-0o9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="102" id="fVB-aX-HnX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ES4-P8-bP1" secondAttribute="trailing" constant="126" id="gqN-RK-lxX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sap-HH-kSm" secondAttribute="trailing" constant="238" id="o5v-0E-yo7"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="dpz-iL-w6S" secondAttribute="trailing" constant="20" id="oFT-eU-XrU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="dpz-iL-w6S" secondAttribute="trailing" constant="48" id="oFT-eU-XrU"/>
                             <constraint firstItem="sap-HH-kSm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="oga-be-3tw"/>
                             <constraint firstItem="EYG-Un-0o9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="29" id="sj9-x4-Tv9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EYG-Un-0o9" secondAttribute="trailing" constant="102" id="uUU-jT-W7R"/>
